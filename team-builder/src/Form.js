@@ -9,20 +9,26 @@ function Form() {
 	const onFormSubmit = event => {
 		event.preventDefault();
 	};
+
+	const onInputChange = event => {
+		const changedInput = event.target.name;
+		const changedValue = event.target.value;
+		console.log(changedValue);
+	};
 	return (
 		<form onSubmit={onFormSubmit}>
 			<label>
 				Name
-				<input name="fname" type="text" />
+				<input name="fname" type="text" onChange={onInputChange} />
 			</label>
 
 			<label>
 				Last Name
-				<input name="lname" type="text" />
+				<input name="lname" type="text" onChange={onInputChange} />
 			</label>
 			<label>
 				Specialty
-				<input name="specialty" type="text" />
+				<input name="specialty" type="text" onChange={onInputChange} />
 			</label>
 			<br />
 			<input type="submit" />
