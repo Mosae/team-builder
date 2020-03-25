@@ -12,10 +12,10 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				Medical Team
+				<h1>Medical Team</h1>
 				{doctor.map(dr => (
 					<div>
-						{dr.fname} {dr.lname}
+						Dr. {dr.fname} {dr.lname}
 					</div>
 				))}
 			</header>
