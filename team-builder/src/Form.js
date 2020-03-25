@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 
 function Form() {
+	const [formValues, setFormValues] = useState({
+		fname: '',
+		lanme: '',
+		specialty: ''
+	});
 	const onFormSubmit = event => {
 		event.preventDefault();
 	};
