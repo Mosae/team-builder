@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
+const listOfDoctors = [
+	{ fname: 'Nancy', lname: 'Jones', specialty: 'Surgeon' },
+	{ fname: 'Kelly', lname: 'Clarke', specialty: 'OBGYN' }
+];
 function Form(props) {
-	const [doctor, setDoctor] = useState();
+	const [doctor, setDoctor] = useState(listOfDoctors);
 	const [formValues, setFormValues] = useState({
 		fname: '',
 		lanme: '',
@@ -20,7 +24,7 @@ function Form(props) {
 	};
 	const onFormSubmit = event => {
 		event.preventDefault();
-		console.log('passed down props', props.details);
+		console.log('passed down props', props);
 
 		const newDoctor = {
 			fname: formValues.fname,
@@ -28,42 +32,50 @@ function Form(props) {
 			specialty: formValues.specialty
 		};
 
-		setDoctor([...props.details, newDoctor]);
+		setDoctor([...doctor, newDoctor]);
 	};
 
 	return (
-		<form onSubmit={onFormSubmit}>
-			<label>
-				Name
-				<input
-					name="fname"
-					type="text"
-					onChange={onInputChange}
-					value={formValues.fname}
-				/>
-			</label>
+		<div>
+			<form onSubmit={onFormSubmit}>
+				<label>
+					Name
+					<input
+						name="fname"
+						type="text"
+						onChange={onInputChange}
+						value={formValues.fname}
+					/>
+				</label>
 
-			<label>
-				Last Name
-				<input
-					name="lname"
-					type="text"
-					onChange={onInputChange}
-					value={formValues.lname}
-				/>
-			</label>
-			<label>
-				Specialty
-				<input
-					name="specialty"
-					type="text"
-					onChange={onInputChange}
-					values={formValues.specialty}
-				/>
-			</label>
-			<br />
-			<input type="submit" />
-		</form>
+				<label>
+					Last Name
+					<input
+						name="lname"
+						type="text"
+						onChange={onInputChange}
+						value={formValues.lname}
+					/>
+				</label>
+				<label>
+					Specialty
+					<input
+						name="specialty"
+						type="text"
+						onChange={onInputChange}
+						values={formValues.specialty}
+					/>
+				</label>
+				<br />
+				<input type="submit" />
+			</form>
+			<h1>Medical Team</h1>
+			{doctor.map(dr => (
+				<div>
+					Dr. {dr.fname} {dr.lname} - {dr.specialty}
+				</div>
+			))}
+		</div>
 	);
 }
 export default Form;
