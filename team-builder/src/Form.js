@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 
 function Form() {
+	const onFormSubmit = event => {
+		event.preventDefault();
+	};
 	return (
-		<form>
+		<form onSubmit={onFormSubmit}>
 			<label>
 				Name
 				<input name="fname" type="text" />
