@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const listOfDoctors = [
-	{ fname: 'Nancy', lname: 'Jones', specialty: 'Surgeon' },
-	{ fname: 'Kelly', lname: 'Clarke', specialty: 'OBGYN' }
-];
+// const listOfDoctors = [
+// 	{ fname: 'Nancy', lname: 'Jones', specialty: 'Surgeon' },
+// 	{ fname: 'Kelly', lname: 'Clarke', specialty: 'OBGYN' }
+// ];
 function Form(props) {
-	const [doctor, setDoctor] = useState(listOfDoctors);
+	// const [doctor, setDoctor] = useState(listOfDoctors);
 	const [formValues, setFormValues] = useState({
 		fname: '',
 		lanme: '',
@@ -32,7 +32,7 @@ function Form(props) {
 			specialty: formValues.specialty
 		};
 
-		setDoctor([...doctor, newDoctor]);
+		props.setDoctor([...props.doctor, newDoctor]);
 	};
 
 	return (
@@ -69,12 +69,12 @@ function Form(props) {
 				<br />
 				<input type="submit" />
 			</form>
-			<h1>Medical Team</h1>
+			{/* <h1>Medical Team</h1>
 			{doctor.map(dr => (
 				<div>
 					Dr. {dr.fname} {dr.lname} - {dr.specialty}
 				</div>
-			))}
+			))} */}
 		</div>
 	);
 }
