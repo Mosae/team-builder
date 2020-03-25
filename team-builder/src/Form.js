@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-function Form() {
+function Form(props) {
+	console.log(props);
 	const [formValues, setFormValues] = useState({
 		fname: '',
 		lanme: '',
@@ -15,7 +16,7 @@ function Form() {
 			specialty: formValues.specialty
 		};
 
-		setDoctor({ ...doctor, newDoctor });
+		setDoctor({ ...props.doctors, newDoctor });
 	};
 
 	const onInputChange = event => {

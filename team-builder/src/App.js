@@ -19,7 +19,7 @@ function App() {
 					</div>
 				))}
 				<br />
-				<Form />
+				<Form details={doctor} />
 			</header>
 		</div>
 	);
