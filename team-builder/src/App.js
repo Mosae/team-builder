@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-
+import Form from './Form.js';
 const listOfDoctors = [
 	{ fname: 'Nancy', lname: 'Jones' },
 	{ fname: 'Kelly', lname: 'Clarke' }
@@ -18,6 +18,8 @@ function App() {
 						Dr. {dr.fname} {dr.lname}
 					</div>
 				))}
+				<br />
+				<Form />
 			</header>
 		</div>
 	);
