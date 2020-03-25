@@ -12,6 +12,10 @@ function Form() {
 				Last Name
 				<input name="lname" type="text" />
 			</label>
+			<label>
+				Specialty
+				<input name="specialty" type="text" />
+			</label>
 			<br />
 			<input type="submit" />
 		</form>

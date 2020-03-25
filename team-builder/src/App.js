@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import Form from './Form.js';
 const listOfDoctors = [
-	{ fname: 'Nancy', lname: 'Jones' },
-	{ fname: 'Kelly', lname: 'Clarke' }
+	{ fname: 'Nancy', lname: 'Jones', specialty: 'Surgeon' },
+	{ fname: 'Kelly', lname: 'Clarke', specialty: 'OBGYN' }
 ];
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 				<h1>Medical Team</h1>
 				{doctor.map(dr => (
 					<div>
-						Dr. {dr.fname} {dr.lname}
+						Dr. {dr.fname} {dr.lname} - {dr.specialty}
 					</div>
 				))}
 				<br />
